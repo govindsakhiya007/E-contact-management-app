@@ -25,7 +25,7 @@ export class EmployeeService {
 	getEmployee(id: string): Observable<Employee> {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.get<Employee>(url).pipe(
-		catchError(this.handleError)
+			catchError(this.handleError)
 		);
 	}
 	
@@ -40,7 +40,7 @@ export class EmployeeService {
 	updateEmployee(id: string, employee: Employee): Observable<Employee> {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.put<Employee>(url, employee, this.httpOptions()).pipe(
-		catchError(this.handleError)
+			catchError(this.handleError)
 		);
 	}
 	
@@ -48,7 +48,7 @@ export class EmployeeService {
 	deleteEmployee(id: number): Observable<void> {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.delete<void>(url).pipe(
-		catchError(this.handleError)
+			catchError(this.handleError)
 		);
 	}
 	

@@ -1,0 +1,35 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label for="name" class="form-label">Name</label>
+			<input formControlName="name" type="text" class="form-control" required>
+			<div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
+				Name is required.
+			</div>
+        </div>
+        <div class="col-md-4">
+            <label for="email" class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control" required>
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger" placeholder="example@gmail.com">
+                <ng-container *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</ng-container>
+                <ng-container *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email.</ng-container>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <label for="phone" class="form-label">Phone</label>
+			<input formControlName="phone" type="text" class="form-control" required>
+			<div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="text-danger" placeholder="xxxxxxxxxx">
+				<ng-container *ngIf="contactForm.get('phone')?.errors?.['required']">Phone number is required.</ng-container>
+				<ng-container *ngIf="contactForm.get('phone')?.errors?.['pattern']">Please enter a valid phone number.</ng-container>
+			</div>
+        </div>
+    </div>
+	<div class="row mb-3">
+		<div class="d-flex justify-content-end mt-3">
+			<a class="btn btn-secondary" routerLink="/contacts">
+				Back
+			</a>
+			&nbsp;<button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">{{ contactId ? 'Update' : 'Create' }}</button>
+		</div>
+	</div>
+</form>

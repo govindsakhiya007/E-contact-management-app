@@ -3,30 +3,30 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 /* styles.css */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  .sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background-color: #f8f9fa;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-  }
-  
-  .content {
-    flex-grow: 1;
-    padding: 20px;
-  }
-  
-  footer {
-    background-color: #343a40;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
+}
+.sidebar {
+	min-width: 250px;
+	max-width: 250px;
+	background-color: #f8f9fa;
+	height: 100vh;
+	position: sticky;
+	top: 0;
+}
+.content {
+	flex-grow: 1;
+	padding: 20px;
+}
+footer {
+	background-color: #343a40;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
   
